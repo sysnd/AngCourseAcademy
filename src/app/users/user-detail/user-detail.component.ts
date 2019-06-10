@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import UserInterface from '../models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-detail',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() user: UserInterface;
+  @Output() onDelete: EventEmitter<number> = new EventEmitter();
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+  
+  onDeleteClicked() {
+    this.onDelete.emit(this.user.id);
+  }
 
+  onUserEdit() {
+    this.router.navigate(['users/add', this.user.id]);
+  }
 }

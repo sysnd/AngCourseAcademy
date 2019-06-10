@@ -1,14 +1,29 @@
 import { Routes } from '@angular/router';
- import { UsersListComponent } from './users/users-list/users-list.component';
-import { CoursesListComponent } from './courses/courses-list/courses-list.component';
+import { MasterLayoutComponent } from './layout/master-layout/master-layout.component';
+
 
 export const routes: Routes = [
     {
-        path: 'users',
-        component: UsersListComponent
+        path: '',
+        component: MasterLayoutComponent,
+        children: [
+            {
+                path: 'users',
+                loadChildren: './users/users.module#UsersModule'
+            },
+            {
+                path: 'courses',
+                loadChildren: './courses/courses.module#CoursesModule'
+            }
+        ]
     },
     {
-        path: "courses",
-        component: CoursesListComponent
-    }   
+        path: 'auth',
+        loadChildren: './auth/auth.module#AuthModule'
+        },
+    {
+        path: '',
+        redirectTo: '/users',
+        pathMatch: 'full'
+    }
 ];

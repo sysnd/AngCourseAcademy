@@ -1,35 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './layout/header/header.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
-import { LoginComponent } from './authentication/login/login.component';
-import { AppRoutingModule } from './app-routing.module';
-import { UsersListComponent } from './users/users-list/users-list.component';
-import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
-import { CoursesListComponent } from './courses/courses-list/courses-list.component';
-import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
+import { UsersService } from './users/users.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MasterLayoutComponent } from './layout/master-layout/master-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AuthenticationComponent,
-    LoginComponent,
-    UsersListComponent,
-    UserDetailComponent,
-    CoursesListComponent,
-    CourseDetailComponent
+    MasterLayoutComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot(routes),
-  ],
-  providers: [],
+    CommonModule,
+    FormsModule,
+    RouterModule.forRoot(routes)
+    ],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
