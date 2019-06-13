@@ -1,3 +1,12 @@
-<p>
-  courses-list works!
-</p>
+<div class="course-holder">
+    <div class="row justify-content-end">
+        <button *ngIf="isAdmin()"
+        class="btn btn-primary mr-3 mt-2"
+        (click)="onCourseAdd()">Add course</button>
+    </div>
+  <div class="row">
+    <div class="course-detail col-6 mt-3 mb-3" *ngFor="let currentCourse of courses; let index = index">
+        <app-course-detail [course]="currentCourse" (onDelete)="onCourseDeleted($event)"></app-course-detail>
+    </div>
+</div>  
+</div>

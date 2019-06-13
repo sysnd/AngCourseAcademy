@@ -3,6 +3,6 @@ export default interface UserInterface {
     name: string;
     email: string;
     password: string;
-    role?: string;
+    isAdmin: boolean;
     isBlocked?: boolean;
 }

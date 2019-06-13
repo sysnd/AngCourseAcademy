@@ -9,13 +9,13 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-
   userForm: FormGroup;
 
   constructor(private fb: FormBuilder,
               private usersService: UsersService,
             private router: Router,
             private route: ActivatedRoute) {
+              debugger;
 
     this.route.params.subscribe((params) => {
       console.log(params);
@@ -24,10 +24,7 @@ export class AddUserComponent implements OnInit {
         this.usersService.getById(params.id)
         .subscribe((user) => {
           this.createForm();
-
-          this.userForm.patchValue({...user});
-          // this.userForm.name = user.name;
-          // this.userForm.password = user.paswwrod;
+          this.userForm.patchValue({...user});        
         });
       }
     });
@@ -42,9 +39,8 @@ export class AddUserComponent implements OnInit {
     this.userForm = this.fb.group({
       id: [''],
       name: ['', Validators.required],
-      username: ['', [Validators.required, Validators.minLength(3)]],
-      password: ['', [Validators.required, Validators.maxLength(5)]],
-      picture: ['https://picsum.photos/200/300', Validators.required]
+      email: ['', [Validators.required, Validators.minLength(3)]],
+      password: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
 
@@ -53,7 +49,6 @@ export class AddUserComponent implements OnInit {
 
     this.usersService.addNewUser(this.userForm.value)
     .subscribe(() => {
-      console.log('USER CREATED');
       this.router.navigateByUrl('users/list');
     })
   }
@@ -62,8 +57,8 @@ export class AddUserComponent implements OnInit {
     return this.userForm.valid;
   }
 
-  get username() {
-    return this.userForm.get('username');
+  get email() {
+    return this.userForm.get('email');
   }
 
   get password() {
@@ -73,9 +68,5 @@ export class AddUserComponent implements OnInit {
   get name() {
     return this.userForm.get('name');
   }
-
-  get picture() {
-    return this.userForm.get('picture');
-  }
-
+  
 }

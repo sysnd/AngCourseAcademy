@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '../../../node_modules/@angular/forms';
 import { CoursesComponent } from './courses.component';
 
 @NgModule({
-  declarations: [CourseDetailComponent, CoursesListComponent, CoursesComponent, AddCourseComponent],
+  declarations: [CourseDetailComponent, CoursesListComponent, AddCourseComponent, CoursesComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

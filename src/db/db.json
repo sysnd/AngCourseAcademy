@@ -1,0 +1,101 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "name": "Candice Casey",
+      "email": "Avis@gmail.com",
+      "password": "123",
+      "isAdmin": true
+    },
+    {
+      "id": 5,
+      "name": "Martha Moody",
+      "email": "Elizabeth@gmail.com",
+      "password": "123",
+      "isAdmin": false
+    },
+    {
+      "name": "Spasko 2",
+      "email": "SPas@gmail.com",
+      "password": "az",
+      "id": 6,
+      "isAdmin": false
+    },
+    {
+      "name": "gsdfgdsf",
+      "email": "gfdgsdf@gmail.com",
+      "password": "as",
+      "id": 7,
+      "isAdmin": false
+    },
+    {
+      "name": "Welch Cash",
+      "email": "Green@gmail.com",
+      "password": "123",
+      "id": 8,
+      "isAdmin": false
+    },
+    {
+      "id": 9,
+      "name": "Test Testov",
+      "email": "test@gmail.com",
+      "password": "test1",
+      "isAdmin": false
+    },
+    {
+      "id": 10,
+      "name": "Water",
+      "email": "niyaaa18@gmail.com",
+      "password": "1234",
+      "isAdmin": true
+    }
+  ],
+  "courses": [
+    {
+      "id": "83404ef5-bb8a-432a-9e06-8209c94d34de",
+      "title": "labore",
+      "description": "exercitation tempor aliqua reprehenderit fugiat tempor dolor voluptate nostrud deserunt",
+      "rating": 18,
+      "attendees": [
+        {
+          "name": "Candice Casey",
+          "id": 3
+        }
+      ]
+    },
+    {
+      "id": "2d195d33-13e4-4f9d-a788-95a90757844c",
+      "title": "gfggg",
+      "description": "tempor cupidatat nostrud qui ex amet commodo duis esse enim",
+      "rating": 88,
+      "attendees": []
+    },
+    {
+      "id": "060bbd4f-9051-445e-9a99-f82553c48314",
+      "title": "reprehenderit",
+      "description": "occaecat commodo ullamco mollit aliquip laborum cillum nostrud nisi eiusmod",
+      "rating": 90,
+      "attendees": []
+    },
+    {
+      "id": "67smj-d",
+      "title": "TITLE",
+      "description": "DWESCfgtrs",
+      "rating": 65,
+      "attendees": [
+        {
+          "name": "Candice Casey",
+          "id": 3
+        }
+      ]
+    },
+    {
+      "id": "BR6CcYo",
+      "title": "Test Course",
+      "description": "This is a test course",
+      "creationDate": "",
+      "attendees": [],
+      "rating": 0
+    }
+  ]
+}

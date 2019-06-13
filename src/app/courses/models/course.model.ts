@@ -1,11 +1,9 @@
+import AttendeeInterface from './attendee.model';
+
 export default interface CourseInterface {
-    id?: number;
+    id: number;
     title: string;
-    description?: string;
-    rating?: number;
-    dateCreated: Date;
-    completion: number;
-    visitedCount?: number;
-    reviewIds?: number[];
-    commentIds?: number[];
+    description: string;
+    rating: number;
+    attendees: AttendeeInterface[];
 }

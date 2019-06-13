@@ -1,3 +1,44 @@
-<p>
-  course-detail works!
-</p>
+<div class="single-course">
+    <button *ngIf="isLoggedIn && canAttend"
+    class="attend-btn btn btn-primary"
+    title="Attend"
+    (click)="onAttendClick()"
+    >Attend</button>
+  
+    <button *ngIf="isLoggedIn && isAdmin()"
+    class="edit-btn btn btn-info"
+    title="Edit"
+    (click)="onEditClick()"
+    >Edit</button>
+  
+    <button *ngIf="isLoggedIn && isAdmin()"
+    class="delete-btn btn btn-danger"
+    title="Delete"
+    (click)="onDeleteClick()"
+    >Delete</button>
+    <div class="row">
+      <div class="col-12">
+        <h3>{{ course.title }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p>{{ course.description }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <span>Rating: </span>
+        <span>{{ course.rating }}</span>
+      </div>    
+    </div>
+    <div class="row" *ngIf = "course.attendees.length">
+      <div class="col-12">
+        <span>attendee :</span>
+        <div *ngFor="let attendee of course.attendees">
+          {{ attendee.name }}
+        </div>
+      </div>
+    </div>
+  </div>
+  

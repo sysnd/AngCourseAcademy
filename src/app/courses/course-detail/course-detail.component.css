@@ -1,0 +1,23 @@
+.single-task {
+    border: 1px solid gray;
+    padding: 20px;
+    text-align: center;
+}
+
+.attend-btn {
+    cursor: pointer;
+    float: right;
+    margin:5px;
+}
+
+.edit-btn {
+    cursor: pointer;
+    float: right;
+    margin:5px;
+}
+
+.delete-btn {
+    cursor: pointer;
+    float: right;
+    margin:5px;
+}

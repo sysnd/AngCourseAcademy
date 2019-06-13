@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { MasterLayoutComponent } from './layout/master-layout/master-layout.component';
+import { NonAuthenticatedGuard } from './authentication/guards/non-authenticated.guard';
+import { AuthenticatedGuard } from './authentication/guards/authenticated.guard';
 
 
 export const routes: Routes = [
@@ -9,7 +11,8 @@ export const routes: Routes = [
         children: [
             {
                 path: 'users',
-                loadChildren: './users/users.module#UsersModule'
+                loadChildren: './users/users.module#UsersModule',
+                canLoad: [AuthenticatedGuard]
             },
             {
                 path: 'courses',
@@ -19,8 +22,9 @@ export const routes: Routes = [
     },
     {
         path: 'auth',
-        loadChildren: './auth/auth.module#AuthModule'
-        },
+        loadChildren: './authentication/authentication.module#AuthModule',
+        canLoad: [NonAuthenticatedGuard]
+    },
     {
         path: '',
         redirectTo: '/users',
